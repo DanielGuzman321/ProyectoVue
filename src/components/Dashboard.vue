@@ -1,226 +1,160 @@
 <template>
-    <div class="dashboard">
-        <div class="card-icon">
-            <div class="card-icon-body">
-                <div class="card-icon-i">
-                    <i class="fa fa-calendar"></i>
-                </div>
-                <h3>Users</h3>
-            </div>
-        </div>
-        <div class="card-icon">
-            <div class="card-icon-body">
-                <div class="card-icon-i">
-                    <i class="fa fa-shopping-bag"></i>
-                </div>
-                <h3>Products</h3>
-            </div>
-        </div>
-        <div class="card-icon">
-            <div class="card-icon-body">
-                <div class="card-icon-i">
-                    <i class="fa fa-cogs"></i>
-                </div>
-                <h3>Settings</h3>
-            </div>
-        </div>
-        <div class="card-icon">
-            <div class="card-icon-body">
-                <div class="card-icon-i">
-                    <i class="fa fa-star"></i>
-                </div>
-                <h3>Projects</h3>
-            </div>
-        </div>
-        <div class="card-icon">
-            <div class="card-icon-body">
-                <div class="card-icon-i">
-                    <i class="fa fa-star"></i>
-                </div>
-                <h3>Favorite</h3>
-            </div>
-        </div>
-        <div class="table">
-            <div class="table-head">
-                <h3>Table</h3>
-            </div>
-            <div class="table-body">
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Users</th>
-                                <th>Projects</th>
-                                <th>Products</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                   <div class="btn-group">
-                                        <a href="" title="View">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="" title="Edit">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <a href="" title="Delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                   </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                   <div class="btn-group">
-                                        <a href="" title="View">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="" title="Edit">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <a href="" title="Delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                   </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                   <div class="btn-group">
-                                        <a href="" title="View">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="" title="Edit">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <a href="" title="Delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                   </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                   <div class="btn-group">
-                                        <a href="" title="View">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="" title="Edit">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <a href="" title="Delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                   </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                    lorem 
-                                </td>
-                                <td>
-                                   <div class="btn-group">
-                                        <a href="" title="View">
-                                            <i class="fa fa-eye"></i>
-                                        </a>
-                                        <a href="" title="Edit">
-                                            <i class="fa fa-pencil"></i>
-                                        </a>
-                                        <a href="" title="Delete">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                   </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="cards">
-            <div class="card">
-                <div class="icon">
-                    <i class="fa fa-users"></i>
-                </div>
-                <div class="num">1000</div>
-                <h3>Users</h3>
-            </div>
-            <div class="card">
-                <div class="icon">
-                    <i class="fa fa-copy"></i>
-                </div>
-                <div class="num">3400</div>
-                <h3>Projects</h3>
-            </div>
-            <div class="card">
-                <div class="icon">
-                    <i class="fa fa-shopping-bag"></i>
-                </div>
-                <div class="num">2000</div>
-                <h3>Products</h3>
-            </div>
-        </div>
+<body class="w3-black">
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <img src="../assets/logo.svg" style="width:75%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>User</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>Empleado</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PHOTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACT</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">User</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">Empleado</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Los</span> Usuarios</h1>
+  </header>
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  <th>Savings</th>
+  </tr>
+  <tr>
+    <td>Peter</td>
+    <td>Griffin</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>Lois</td>
+    <td>Griffin</td>
+    <td>$150</td>
+  </tr>
+  <tr>
+    <td>Joe</td>
+    <td>Swanson</td>
+    <td>$300</td>
+  </tr>
+  <tr>
+    <td>Cleveland</td>
+    <td>Brown</td>
+    <td>$250</td>
+  </tr>
+</table>
+    <!--
+    Testimonials
+    <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  
+    <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>John Doe saved us from a web disaster.</p><br>
+    
+    <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
+    <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than John Doe.</p>
+   End About Section 
+  </div>
+  
+   Portfolio Section 
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">My Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <-- Grid for photos 
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/rocks.jpg" style="width:100%">
+        <img src="/w3images/sailboat.jpg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="/w3images/underwater.jpg" style="width:100%">
+        <img src="/w3images/chef.jpg" style="width:100%">
+        <img src="/w3images/wedding.jpg" style="width:100%">
+        <img src="/w3images/p6.jpg" style="width:100%">
+      </div>
+    <-- End photo grid 
     </div>
+  <-- End Portfolio Section --
+  </div>
+
+  <-- Contact Section --
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contact Me</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+    </div><br>
+    <p>Let's get in touch. Send me a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  End Contact Section-->
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+ 
+
+    <!-- Footer -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+   -->
+    <!-- End footer -->
+  </footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
   </template>
   
   <script >
@@ -235,203 +169,30 @@
   </script>
   
   <style>
-  
-  
-  .dashboard{
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .card-icon{
-    flex: 1 1 18%;
-    background: #03b6a7;
-    border-radius: 6px;
-    border: 1px solid #deebfd;
-    box-shadow: 0 3px 10px rgba(62,85,120,.045);
-    margin: 0 8px 30px;
-  }
-  
-  .card-icon .card-icon-body{
-    padding: 20px;
-  }
-  
-  .card-icon-i{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color:#e5f4e7;
-    margin: 0 auto;
-    position: relative;
-  }
-  
-  .card-icon .card-icon-body h3{
-    text-align: center;
-    margin-bottom: 0;
-    margin-top: 10px;
-    font-size: 18px;
-    font-weight: 400;
-  }
-  
-  .card-icon-i i{
-    top: 50%;
-    text-align: center;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 45px;
-    color: #5DAE8B;
-  }
-  
-  .table{
-    flex: 0 1 58%;
-    background: #8f8f8f;
-    border-radius: 6px;
-    border: 1px solid #86afe8;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.045);
-    margin: 0 8px 30px;
-  }
-  
-  .table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
-  
-  .table .table-head{
-    border-bottom: 1px solid #f50000;
-    padding: 0 15px;
-  }
-  
-  .table .table-body{
-    padding: 25px;
-  }
-  
-  .table .table-body table{
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .table table thead tr th{
-    padding: 0 10px;
-    height: 50px;
-    vertical-align: middle;
-    color: #666;
-    font-weight: 500;
-    border-bottom-color: #e2e8f0;
-    background-color: #83c1ff;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-  }
-  
-  .table tbody tr td, .table tbody tr th {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    vertical-align: middle;
-    font-size: 14px;
-    color: #212529;
-    text-align: center;
-  }
-  
-  .btn-group{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .btn-group a{
-    padding: 3px;
-    width: 26px;
-    height: 26px;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    margin: 0 5px;
-        color: #f2f2f2;
-    background-color:#5dae8b;
-    border-color: #5dae8b;
-    border-radius: 0.375rem;
-    font-weight: 500;
-  }
-  
-  .btn-group a{
-        text-align: center;
-    line-height: 25px;
-    display: block;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .table{
-        flex: 1 1 100%;
-        overflow-x: scroll;
-    }
-  }
-  
-  .cards{
-    flex: 1 1 34%;
-    flex-wrap: wrap;
-  }
-  
-  .card{
-    border-radius: 6px;
-    border: 1px solid #ffffff;
-    box-shadow: 0 3px 10px rgba(62,85,120,.045);
-    margin: 0 8px 10px;
-    position: relative;
-    background-color: #5CAD8A;
-    height: 94px;
-    padding: 20px;
-  }
-  
-  .card .icon {
-    color: rgba(0, 0, 0, 0.1);
-    position: absolute;
-    right: 38px;
-    bottom: 69px;
-    z-index: 1;
-  }
-  
-  .card .icon i {
-    font-size: 100px;
-    line-height: 0;
-    margin: 0;
-    padding: 0;
-    vertical-align: bottom;
-  }
-  
-  .card .num, .card h3{
-    position: relative;
-    color: #fff;
-    z-index: 5;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .card .num {
-    font-size: 50px;
-    font-weight: bold;
-  }
-  
-  .card h3{
-    margin-top: -100px;
-    font-size: 20px;
-    margin-left: 2px;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .cards{
-        flex: 1 1 100%;
-    }
-    .card .icon {
-        z-index: 0;
-    }
-    .card .num, .card h3 {
-        z-index: 0;
-    }
-  }
-  .main-content{
-    padding: 105px 25px 0 25px;
-    margin-left: 337px;
-    z-index: -1;
-    min-height: 600px;
-    background-color: #8cd812;
-  }
-  </style>
-  
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Set the width of the sidebar to 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+#main {margin-left: 120px}
+/* Remove margins from "page content" on small screens */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+}
+tr:nth-child(even) {
+  background-color: rgba(7, 43, 43, 0.4);
+}
+
+/* th:nth-child(even),td:nth-child(even) {
+  background-color: rgba(18, 48, 48, 0.4);
+} */
+</style>
