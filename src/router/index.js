@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import DashboardView from '../views/DashboardView.vue'
+import CrearUser from '../components/CrearUsuarios.vue'
+import ListarUser from '../components/ListarUsuarios.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +30,16 @@ const router = createRouter({
       path: '/Dashboard',
       name: 'Dashboard',
       component: DashboardView
+    },
+    {
+      path: '/listarusuario',
+      name: 'listarusuario',
+      component: ListarUser
+    },
+    {
+      path: '/crearusuario',
+      name: 'crearusuario',
+      component: CrearUser
     }
   ]
 })

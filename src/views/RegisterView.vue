@@ -1,4 +1,4 @@
-<script setup>
+<script setup >
 import TheRegister from '../components/Theregister.vue'
 </script>
 
