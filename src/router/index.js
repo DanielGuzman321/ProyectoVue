@@ -32,13 +32,13 @@ const router = createRouter({
       component: DashboardView
     },
     {
-      path: '/listarusuario',
-      name: 'listarusuario',
+      path: '/listarcliente',
+      name: 'listarcliente',
       component: ListarUser
     },
     {
-      path: '/crearusuario',
-      name: 'crearusuario',
+      path: '/crearcliente',
+      name: 'crearcliente',
       component: CrearUser
     }
   ]

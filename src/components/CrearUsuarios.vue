@@ -84,7 +84,7 @@
 
           <div class="btn-group" role="group">
             |<button type="submit" class="btn btn-success">Agregar</button>|
-            |<router-link :to="{ name: 'listarusuario' }" class="btn btn-danger"
+            |<router-link :to="{ name: 'listarcliente' }" class="btn btn-danger"
               >Cancelar</router-link
             >|
           </div>
@@ -118,7 +118,7 @@ export default {
       axios.post("https://localhost:7294/Cliente", datosEnviar)
         .then((result) => {
           console.log(result);
-          window.location.href = "listarusuario";
+          window.location.href = "listarcliente";
         });
     },
   },
