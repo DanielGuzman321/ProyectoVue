@@ -2,8 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import DashboardView from '../views/DashboardView.vue'
-import CrearUser from '../components/CrearUsuarios.vue'
-import ListarUser from '../components/ListarUsuarios.vue'
+import CrearCliente from '../components/CrearCliente.vue'
+import ListarCliente from '../components/ListarCliente.vue'
+import editarCliente from '../components/EditarCliente.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,12 +35,17 @@ const router = createRouter({
     {
       path: '/listarcliente',
       name: 'listarcliente',
-      component: ListarUser
+      component: ListarCliente
     },
     {
       path: '/crearcliente',
       name: 'crearcliente',
-      component: CrearUser
+      component: CrearCliente
+    },
+    {
+      path: '/editarcliente',
+      name: 'editarcliente',
+      component: editarCliente
     }
   ]
 })
