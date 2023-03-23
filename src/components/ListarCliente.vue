@@ -96,7 +96,7 @@ export default {
       });
     },
     borrarCliente(id) {
-        var pregunta=window.confirm('Esta se seguro de eliminar este registro?');
+        var pregunta=window.confirm('Desea Eliminar el Cliente?');
   
         if(pregunta===true){
           axios.delete("https://localhost:7294/Cliente?id=" + id);

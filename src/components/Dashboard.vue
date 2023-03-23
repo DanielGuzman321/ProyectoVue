@@ -35,37 +35,11 @@
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">Los</span> Usuarios</h1>
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Pagina de </span> Inicio</h1>
   </header>
   <!-- About Section -->
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <table>
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-  <th>Savings</th>
-  </tr>
-  <tr>
-    <td>Peter</td>
-    <td>Griffin</td>
-    <td>$100</td>
-  </tr>
-  <tr>
-    <td>Lois</td>
-    <td>Griffin</td>
-    <td>$150</td>
-  </tr>
-  <tr>
-    <td>Joe</td>
-    <td>Swanson</td>
-    <td>$300</td>
-  </tr>
-  <tr>
-    <td>Cleveland</td>
-    <td>Brown</td>
-    <td>$250</td>
-  </tr>
-</table>
+    <img src="https://static.independentespanol.com/2023/03/23/19/MYKE_TOWERS_00442.jpg?quality=75&width=990&height=614&fit=bounds&format=pjpg&crop=16%3A9%2Coffset-y0.5&auto=webp" alt="boy" class="w3-image" width="992" height="1108">
     <!--
     Testimonials
     <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>  

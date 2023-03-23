@@ -39,18 +39,18 @@
                         <div class="col">
 
                             <div class="form-group">
-                                <label for="nombre">nombre:</label>
+                                <label for="nombre">Nombre:</label>
                                 <input type="text" class="form-control" name="nombre" aria-describedby="helpId" id="nombre"
-                                    placeholder="usuario" v-model="Clientes.nombre" />
-                                <small id="helpId" class="form-text" text-muted>Ingresa tu correo de usuario</small>
+                                    placeholder="Ingrese Nombre" v-model="Clientes.nombre" />
+                                <!-- <small id="helpId" class="form-text" text-muted>Ingresa tu correo de usuario</small> -->
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="apellidos">apellidos:</label>
+                                <label for="apellidos">Apellidos:</label>
                                 <input type="text" class="form-control" name="apellidos" id="apellidos"
-                                    aria-describedby="helpId" placeholder="apellidos" v-model="Clientes.apellidos" />
-                                <small id="helpId" class="form-text" text-muted>Ingresa tu contraseña</small>
+                                    aria-describedby="helpId" placeholder="Ingrese Apellidos" v-model="Clientes.apellidos" />
+                                <!-- <small id="helpId" class="form-text" text-muted>Ingresa tu contraseña</small> -->
                             </div>
                         </div>
 
@@ -62,23 +62,23 @@
                             <div class="form-group">
                                 <label for="telefono" >Telefono:</label>
                                 <input type="text" class="form-control" name="telefono" id="telefono"
-                                    aria-describedby="helpId" placeholder="telefono" v-model="Clientes.telefono" />
+                                    aria-describedby="helpId" placeholder="Ingrese Telefono" v-model="Clientes.telefono" />
                             </div>
                         </div>
                         <div class="col">
 
                             <div class="form-group">
-                                <label for="email">email:</label>
+                                <label for="email">Email:</label>
                                 <input type="email" class="form-control" name="email" id="email" aria-describedby="helpId"
-                                    placeholder="email" v-model="Clientes.email" />
+                                    placeholder="Ingrese email" v-model="Clientes.email" />
                             </div>
                         </div>
                         <div class="col">
 
                             <div class="form-group">
-                                <label for="direccion">direccion:</label>
+                                <label for="direccion">Dirección:</label>
                                 <input type="text" class="form-control" name="email" id="direccion" aria-describedby="helpId"
-                                    placeholder="direccion" v-model="Clientes.direccion" />
+                                    placeholder="Ingrese dirección" v-model="Clientes.direccion" />
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
 </div>
 </template>
   
-<script>
+<script >
 import axios from 'axios';
 export default {
     name: "postcliente",
