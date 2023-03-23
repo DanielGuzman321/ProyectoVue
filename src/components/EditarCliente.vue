@@ -19,7 +19,7 @@
                                     <button type="button" class="btn btn-outline-primary"
                                         v-on:click="Buscar(pkCliente)">Buscar</button>
                                     &#160
-                                    <router-link :to="{ name: 'getcliente' }" class="btn btn-outline-danger">Cancelar</router-link>
+                                    <router-link :to="{ name: 'listarcliente' }" class="btn btn-outline-danger">Cancelar</router-link>
                                 </div>
                             </div>
                         </div>
@@ -74,11 +74,11 @@
                         </div>
                     </div>
                     <br>
-                    <div id="botoncerrar" style="display: none;">|<router-link :to="{name:'getcliente'}" type="button" class="btn btn-outline-primary">Finalizar</router-link>|</div>
+                    <div id="botoncerrar" style="display: none;">|<router-link :to="{name:'listarcliente'}" type="button" class="btn btn-outline-primary">Finalizar</router-link>|</div>
                     <div id="botones" class="row" style="display: none;">
                         <div class="btn-group" role="group">
                             |<button type="submit" class="btn btn-outline-primary">Actualizar</button>|
-                            |<router-link :to="{ name: 'getcliente' }" class="btn btn-outline-danger">Cancelar</router-link>|
+                            |<router-link :to="{ name: 'listarcliente' }" class="btn btn-outline-danger">Cancelar</router-link>|
                         </div>
 
                     </div>
@@ -95,7 +95,7 @@
     </div>
 </template>
 
-<script >
+<script>
 import axios from 'axios'
 export default {
     name: 'putcliente',
