@@ -33,7 +33,7 @@
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkEmpleado:</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 name="fkempleado"
                 id="fkempleado"
@@ -46,7 +46,7 @@
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkRol</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 name="fkrol"
                 id="fkrol"

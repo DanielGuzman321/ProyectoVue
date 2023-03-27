@@ -10,7 +10,7 @@
                 type="text"
                 class="form-control"
                 name="razonSocial"
-                v-model="form.razonsocial"
+                v-model="form.razonSocial"
                 aria-describedby="helpId"
                 id="razonSocial"
                 placeholder="Nombre la empresa"
@@ -22,7 +22,7 @@
             <div class="form-group">
               <label for=""  style="font-weight: bold; color: black;">Fecha:</label>
               <input
-                type="text"
+                type="datetime-local"
                 class="form-control"
                 name="fecha"
                 id="fecha"
@@ -52,11 +52,11 @@
             <div class="form-group">
               <label for=""  style="font-weight: bold; color: black;">FkCliente:</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 name="fkCliente"
                 id="fkCliente"
-                v-model="form.fkcliente"
+                v-model="form.fkCliente"
                 aria-describedby="helpId"
                 placeholder="FkCliente"
               />
@@ -87,10 +87,10 @@ export default{
             pkFactora: null,
             form:{
                 "pkFactora":"",
-                "razonsocial":"",
+                "razonSocial":"",
                 "fecha":"",
                 "rfc":"",
-                "fkcliente":"",
+                "fkCliente":"",
             },
         }
     },
@@ -115,10 +115,10 @@ export default{
         axios.get("https://localhost:7294/Factura/" + this.pkFactora)
         .then(datos=>{          
             this.form.pkFactora = datos.data.value.result.pkfactora;
-            this.form.razonsocial = datos.data.value.result.razonsocial;
+            this.form.razonSocial = datos.data.value.result.razonSocial;
             this.form.fecha = datos.data.value.result.fecha;
             this.form.rfc = datos.data.value.result.rfc;
-            this.form.fkcliente = datos.data.value.result.fkcliente;
+            this.form.fkCliente = datos.data.value.result.fkCliente;
             console.log(this.form);
         });
       },

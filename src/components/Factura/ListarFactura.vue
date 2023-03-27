@@ -11,27 +11,27 @@
     <p>Cliente</p>
   </a>
   <a href="/listardepartamento" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
+    <i class="fa fa-database w3-xxlarge"></i>
     <p>Departamento</p>
   </a>
   <a href="/listarempleado" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-address-book-o w3-xxlarge" ></i>
     <p>Empleado</p>
   </a>
   <a href="/listarfactura" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-industry w3-xxlarge" ></i>
     <p>Factura</p>
   </a>
   <a href="/listarrol" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-repeat w3-xxlarge" ></i>
     <p>Rol</p>
   </a>
   <a href="/listarusuario" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-users w3-xxlarge"></i>
     <p>Usuario</p>
   </a>
   <a href="/listarpuesto" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-id-card-o w3-xxlarge" ></i>
     <p>Puesto</p>
   </a>
 </nav>
@@ -76,7 +76,7 @@
                 <td>{{ factura.razonSocial }}</td>
                 <td>{{ factura.fecha }}</td>
                 <td>{{ factura.rfc }}</td>
-                <td>{{ factura.fkCliente }}</td>
+                <td>{{ Puestos.find(e=>e.pkPuesto == factura.fkCliente)?.nombre }}</td>
                 <td>
                     <div class="btn-group" role="label" aria-label="">
                     <button type="button" v-on:click="editarFac(factura.pkFactora)" class="btn btn-warning">
@@ -146,16 +146,24 @@ td:nth-child(even) {
     data() {
       return {
         Facturas: [],
+        Puesto:[],
       };
     },
     created: function () {
-      this.consultarFac();    
+      this.consultarFac();  
+      this.consultarPuesto();  
     },
     methods: {
         consultarFac(){
         axios.get("https://localhost:7294/Factura").then((result) => {
           console.log(result.data.result);
           this.Facturas = result.data.result;
+        });
+      },
+      consultarPuesto(){
+        axios.get("https://localhost:7294/Puesto").then((result) => {
+          console.log(result.data.result);
+          this.Puestos = result.data.result;
         });
       },
       borrarFac(pkFactora) {

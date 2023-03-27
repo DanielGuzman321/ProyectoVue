@@ -59,11 +59,11 @@
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkPuesto</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
-                name="fkpuesto"
-                id="fkpuesto"
-                v-model="form.fkpuesto"
+                name="fkPuesto"
+                id="fkPuesto"
+                v-model="form.fkPuesto"
                 aria-describedby="helpId"
                 placeholder="Fkpuesto"
               />
@@ -72,11 +72,11 @@
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkDepartamento</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
-                name="fkdepartamento"
-                id="fkdepartamento"
-                v-model="form.fkdepartamento"
+                name="fkDepartamento"
+                id="fkDepartamento"
+                v-model="form.fkDepartamento"
                 aria-describedby="helpId"
                 placeholder="FkDepartamento"
               />

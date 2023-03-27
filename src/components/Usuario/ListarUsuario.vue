@@ -1,7 +1,7 @@
 <template>
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
-  <img src="../assets/logo.svg" style="width:75%">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFSvfxb61950EiMknOooovBbcxJYBvJIFGQ9WUZBcoOd3C-dhH2D9q3yRbSgLkA4ZF0tw&usqp=CAU" style="width:75%">
   <a href="/Dashboard" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>Home</p>
@@ -174,7 +174,7 @@ export default {
 
       axios.delete("https://localhost:7294/Usuario?id=" + pkUsuario);
 
-      window.location.href = "listarusuarios";
+      window.location.href = "listarusuario";
     },
     editarUsuarios(pkUsuario){
       console.log(pkUsuario);
