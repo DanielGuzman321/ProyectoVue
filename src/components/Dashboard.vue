@@ -13,27 +13,27 @@
     <p>Cliente</p>
   </a>
   <a href="/listardepartamento" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
+    <i class="fa fa-database w3-xxlarge"></i>
     <p>Departamento</p>
   </a>
   <a href="/listarempleado" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-address-book-o w3-xxlarge" ></i>
     <p>Empleado</p>
   </a>
   <a href="/listarfactura" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-industry w3-xxlarge" ></i>
     <p>Factura</p>
   </a>
   <a href="/listarrol" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-repeat w3-xxlarge" ></i>
     <p>Rol</p>
   </a>
   <a href="/listarusuario" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-users w3-xxlarge"></i>
     <p>Usuario</p>
   </a>
   <a href="/listarpuesto" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+    <i class="fa fa-id-card-o w3-xxlarge" ></i>
     <p>Puesto</p>
   </a>
 </nav>
