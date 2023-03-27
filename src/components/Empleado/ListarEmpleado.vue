@@ -51,40 +51,42 @@
 </div>
 <div class="w3-padding-large" id="main">
     <div class="card">
-      <div class="card-header" style="font-weight: bold; color: white;">Clientes</div>
+      <div class="card-header" style="font-weight: bold; color: white;">Empleados</div>
 
       <div class="butt-fun">|
-      <router-link :to="{ name: 'crearcliente' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear cliente</router-link>|
+      <router-link :to="{ name: 'crearempleado' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear Empleado</router-link>|
       </div>
 
       <div class="card_body">
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th style="font-weight: bold;">PkCliente</th>
+              <th style="font-weight: bold;">PkEmpleado</th>
               <th style="font-weight: bold;">Nombre</th>
               <th style="font-weight: bold;">Apellidos</th>
-              <th style="font-weight: bold;">Direccion</th>
-              <th style="font-weight: bold;">Telefono</th>
-              <th style="font-weight: bold;">Email</th>
+              <th style="font-weight: bold;">Dirección</th>
+              <th style="font-weight: bold;">Ciudad</th>
+              <th style="font-weight: bold;">FkPuesto</th>
+              <th style="font-weight: bold;">FkDepartamento</th>
               <th style="font-weight: bold;">Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="cliente in Clientes" :key="cliente.pkCliente">
-              <td>{{ cliente.pkCliente }}</td>
-              <td>{{ cliente.nombre }}</td>
-              <td>{{ cliente.apellidos }}</td>
-              <td>{{ cliente.telefono }}</td>
-              <td>{{ cliente.email }}</td>
-              <td>{{ cliente.direccion }}</td>    
+            <tr v-for="empleado in Empleados" :key="empleado.pkEmpleado">
+              <td>{{ empleado.pkEmpleado }}</td>
+              <td>{{ empleado.nombre }}</td>
+              <td>{{ empleado.apellidos }}</td>
+              <td>{{ empleado.direccion }}</td>
+              <td>{{ empleado.ciudad }}</td>
+              <td>{{ empleado.fkPuesto }}</td>
+              <td>{{ empleado.fkDepartamento }}</td>
               <td>
                   <div class="btn-group" role="label" aria-label="">
-                  <button type="button" v-on:click="editarCliente(cliente.pkCliente)" class="btn btn-warning">
+                  <button type="button" v-on:click="editarEmpleado(empleado.pkEmpleado)" class="btn btn-warning">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
                 </div>
                 <div class="btn-group" role="label" aria-label="">
-                  |<button type="button" v-on:click="borrarCliente(cliente.pkCliente)"  class="btn btn-danger">
+                  |<button type="button" v-on:click="borrarEmpleado(empleado.pkEmpleado)"  class="btn btn-danger">
                     <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>  
                 </div>
               </td>           
@@ -150,35 +152,36 @@ td:nth-child(even) {
 
 </style>
 
-<script >
+<script>
 import axios from "axios";
+
 export default {
   data() {
     return {
-      Clientes: [],
+      Empleados: [],
     };
   },
   created: function () {
-    this.consultarClientes();    
+    this.consultarEmpleados();    
   },
   methods: {
-    consultarClientes() {
-      axios.get("https://localhost:7294/Cliente").then((result) => {
+      consultarEmpleados(){
+      axios.get("https://localhost:7294/Empleado").then((result) => {
         console.log(result.data.result);
-        this.Clientes = result.data.result;
+        this.Empleados = result.data.result;
       });
     },
-    borrarCliente(pkCliente) {
-      console.log(pkCliente);
+    borrarEmpleado(pkEmpleado) {
+      console.log(pkEmpleado);
 
-      axios.delete("https://localhost:7294/Cliente?id=" + pkCliente);
+      axios.delete("https://localhost:7294/Empleado?id=" + pkEmpleado);
 
-      window.location.href = "listarcliente";
+      window.location.href = "listarusuarios";
     },
-    editarCliente(pkCliente){
-      console.log(pkCliente);
-      this.$router.push("/editar/" + pkCliente)
-    },
+    editarEmpleado(pkEmpleado){
+      console.log(pkEmpleado);
+      this.$router.push("/editarempleado/" + pkEmpleado)
+    }
  },
 };
 </script>

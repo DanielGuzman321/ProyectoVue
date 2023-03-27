@@ -51,40 +51,32 @@
 </div>
 <div class="w3-padding-large" id="main">
     <div class="card">
-      <div class="card-header" style="font-weight: bold; color: white;">Clientes</div>
+      <div class="card-header" style="font-weight: bold; color: white;">Roles</div>
 
       <div class="butt-fun">|
-      <router-link :to="{ name: 'crearcliente' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear cliente</router-link>|
+      <router-link :to="{ name: 'crearrol' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear rol</router-link>|
       </div>
 
       <div class="card_body">
         <table class="table table-striped table-bordered">
           <thead>
             <tr>
-              <th style="font-weight: bold;">PkCliente</th>
+              <th style="font-weight: bold;">pkRol</th>
               <th style="font-weight: bold;">Nombre</th>
-              <th style="font-weight: bold;">Apellidos</th>
-              <th style="font-weight: bold;">Direccion</th>
-              <th style="font-weight: bold;">Telefono</th>
-              <th style="font-weight: bold;">Email</th>
               <th style="font-weight: bold;">Acciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="cliente in Clientes" :key="cliente.pkCliente">
-              <td>{{ cliente.pkCliente }}</td>
-              <td>{{ cliente.nombre }}</td>
-              <td>{{ cliente.apellidos }}</td>
-              <td>{{ cliente.telefono }}</td>
-              <td>{{ cliente.email }}</td>
-              <td>{{ cliente.direccion }}</td>    
+            <tr v-for="rol in Roles" :key="rol.pkRol">
+              <td>{{ rol.pkRol }}</td>
+              <td>{{ rol.nombre }}</td>
               <td>
                   <div class="btn-group" role="label" aria-label="">
-                  <button type="button" v-on:click="editarCliente(cliente.pkCliente)" class="btn btn-warning">
+                  <button type="button" v-on:click="editarRol(rol.pkRol)" class="btn btn-warning">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
                 </div>
                 <div class="btn-group" role="label" aria-label="">
-                  |<button type="button" v-on:click="borrarCliente(cliente.pkCliente)"  class="btn btn-danger">
+                  |<button type="button" v-on:click="borrarRol(rol.pkRol)"  class="btn btn-danger">
                     <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>  
                 </div>
               </td>           
@@ -97,15 +89,6 @@
 </template>
 
 <style>
-
-.card .card-header{
-  text-align: center;
-  background: rgb(79, 85, 79);
-}
-
-.card .butt-fun{
-  margin: 5px;
-}
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
@@ -150,35 +133,35 @@ td:nth-child(even) {
 
 </style>
 
-<script >
+<script>
 import axios from "axios";
 export default {
   data() {
     return {
-      Clientes: [],
+      Roles: [],
     };
   },
   created: function () {
-    this.consultarClientes();    
+    this.consultarRol();    
   },
   methods: {
-    consultarClientes() {
-      axios.get("https://localhost:7294/Cliente").then((result) => {
+      consultarRol(){
+      axios.get("https://localhost:7294/Rol").then((result) => {
         console.log(result.data.result);
-        this.Clientes = result.data.result;
+        this.Roles = result.data.result;
       });
     },
-    borrarCliente(pkCliente) {
-      console.log(pkCliente);
+    borrarRol(pkRol) {
+      console.log(pkRol);
 
-      axios.delete("https://localhost:7294/Cliente?id=" + pkCliente);
+      axios.delete("https://localhost:7294/Rol?id=" + pkRol);
 
-      window.location.href = "listarcliente";
+      window.location.href = "listarrol";
     },
-    editarCliente(pkCliente){
-      console.log(pkCliente);
-      this.$router.push("/editar/" + pkCliente)
-    },
+    editarRol(pkRol){
+      console.log(pkRol);
+      this.$router.push("/editarRol/" + pkRol)
+    }
  },
 };
 </script>

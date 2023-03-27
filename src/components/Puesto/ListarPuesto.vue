@@ -1,5 +1,5 @@
 <template>
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFSvfxb61950EiMknOooovBbcxJYBvJIFGQ9WUZBcoOd3C-dhH2D9q3yRbSgLkA4ZF0tw&usqp=CAU" style="width:75%">
   <a href="/Dashboard" class="w3-bar-item w3-button w3-padding-large w3-black">
@@ -49,64 +49,48 @@
     <a href="/listarpuesto" class="w3-bar-item w3-button" style="width:25% !important">Puesto</a>
   </div>
 </div>
+
 <div class="w3-padding-large" id="main">
-    <div class="card">
-      <div class="card-header" style="font-weight: bold; color: white;">Clientes</div>
-
-      <div class="butt-fun">|
-      <router-link :to="{ name: 'crearcliente' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear cliente</router-link>|
-      </div>
-
-      <div class="card_body">
-        <table class="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th style="font-weight: bold;">PkCliente</th>
-              <th style="font-weight: bold;">Nombre</th>
-              <th style="font-weight: bold;">Apellidos</th>
-              <th style="font-weight: bold;">Direccion</th>
-              <th style="font-weight: bold;">Telefono</th>
-              <th style="font-weight: bold;">Email</th>
-              <th style="font-weight: bold;">Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="cliente in Clientes" :key="cliente.pkCliente">
-              <td>{{ cliente.pkCliente }}</td>
-              <td>{{ cliente.nombre }}</td>
-              <td>{{ cliente.apellidos }}</td>
-              <td>{{ cliente.telefono }}</td>
-              <td>{{ cliente.email }}</td>
-              <td>{{ cliente.direccion }}</td>    
-              <td>
+      <div class="card">
+        <div class="card-header" style="font-weight: bold; color: white;">Puestos</div>
+  
+        <div class="butt-fun">|
+        <router-link :to="{ name: 'crearpuesto' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear puesto</router-link>|
+        </div>
+  
+        <div class="card_body">
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th style="font-weight: bold;">pkPuesto</th>
+                <th style="font-weight: bold;">Nombre</th>
+                <th style="font-weight: bold;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="puesto in Puestos" :key="puesto.pkPuesto">
+                <td>{{ puesto.pkPuesto }}</td>
+                <td>{{ puesto.nombre }}</td>
+                <td>
+                    <div class="btn-group" role="label" aria-label="">
+                    <button type="button" v-on:click="editarPuesto(puesto.pkPuesto)" class="btn btn-warning">
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
+                  </div>
                   <div class="btn-group" role="label" aria-label="">
-                  <button type="button" v-on:click="editarCliente(cliente.pkCliente)" class="btn btn-warning">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button>
-                </div>
-                <div class="btn-group" role="label" aria-label="">
-                  |<button type="button" v-on:click="borrarCliente(cliente.pkCliente)"  class="btn btn-danger">
-                    <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>  
-                </div>
-              </td>           
-            </tr>
-          </tbody>
-        </table>
+                    |<button type="button" v-on:click="borrarPuesto(puesto.pkPuesto)"  class="btn btn-danger">
+                      <i class="fa fa-trash" aria-hidden="true"></i> Eliminar</button>  
+                  </div>
+                </td>           
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-  </div>
-</template>
-
-<style>
-
-.card .card-header{
-  text-align: center;
-  background: rgb(79, 85, 79);
-}
-
-.card .butt-fun{
-  margin: 5px;
-}
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+  </template>
+  
+  <style>
+ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {width: 120px;background: #222;}
@@ -147,38 +131,37 @@ td:nth-child(even) {
   background-color: white; 
   color: black; 
 }
-
-</style>
-
-<script >
-import axios from "axios";
-export default {
-  data() {
-    return {
-      Clientes: [],
-    };
-  },
-  created: function () {
-    this.consultarClientes();    
-  },
-  methods: {
-    consultarClientes() {
-      axios.get("https://localhost:7294/Cliente").then((result) => {
-        console.log(result.data.result);
-        this.Clientes = result.data.result;
-      });
+  </style>
+  
+  <script>
+  import axios from "axios";
+  export default {
+    data() {
+      return {
+        Puestos: [],
+      };
     },
-    borrarCliente(pkCliente) {
-      console.log(pkCliente);
-
-      axios.delete("https://localhost:7294/Cliente?id=" + pkCliente);
-
-      window.location.href = "listarcliente";
+    created: function () {
+      this.consultarPt();    
     },
-    editarCliente(pkCliente){
-      console.log(pkCliente);
-      this.$router.push("/editar/" + pkCliente)
-    },
- },
-};
-</script>
+    methods: {
+        consultarPt(){
+        axios.get("https://localhost:7294/Puesto").then((result) => {
+          console.log(result.data.result);
+          this.Puestos = result.data.result;
+        });
+      },
+      borrarPuesto(pkPuesto) {
+        console.log(pkPuesto);
+  
+        axios.delete("https://localhost:7294/Puesto?id=" + pkPuesto);
+  
+        window.location.href = "listarpuesto";
+      },
+      editarPuesto(pkPuesto){
+        console.log(pkPuesto);
+        this.$router.push("/editarPuesto/" + pkPuesto)
+      },
+   },
+  };
+  </script>
