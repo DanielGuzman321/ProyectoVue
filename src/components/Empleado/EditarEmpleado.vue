@@ -3,7 +3,7 @@
       <div class="card">
         <div class="card-header" style="font-weight: bold; color: white;">Editar Empleado</div>
         <div class="card-body">
-          <form v-on:submit.prevent="EditarEmpleado">
+          <form v-on:submit.prevent="editarEmpleado">
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">Nombre:</label>
               <input
@@ -58,30 +58,16 @@
             </div><br/>
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkPuesto</label>
-              <input
-                type="number"
-                class="form-control"
-                name="fkPuesto"
-                id="fkPuesto"
-                v-model="form.fkPuesto"
-                aria-describedby="helpId"
-                placeholder="Fkpuesto"
-              />
-              <small id="helpId" class="form-text" text-muted>Ingresa el Fkpuesto</small>
+              <select class="form-control" name="fkPuesto" id="fkPuesto" v-model="form.fkPuesto">
+              <option v-for="puesto in Puestos" :value="puesto.pkPuesto" :key="puesto.pkPuesto">{{puesto.nombre}}</option>
+            </select>
             </div><br/>
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkDepartamento</label>
-              <input
-                type="number"
-                class="form-control"
-                name="fkDepartamento"
-                id="fkDepartamento"
-                v-model="form.fkDepartamento"
-                aria-describedby="helpId"
-                placeholder="FkDepartamento"
-              />
-              <small id="helpId" class="form-text" text-muted>Ingresa el FkDepartamento</small>
-            </div><br/>
+              <select class="form-control" name="departamento" id="departamento" v-model="form.fkDepartamento">
+              <option v-for="departamento in Departamentos" :value="departamento.pkDepartamento" :key="departamento.pkDepartamento">{{departamento.nombre}}</option>
+            </select>
+            </div><br/> 
   
             <div class="btn-group" role="group">
               |<button type="submit" class="btn btn-success"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Guardar cambios</button>|
@@ -93,7 +79,7 @@
     </div>
   </template>
  
-<script>
+<script >
 import axios from 'axios';
 export default{
     name: "Editar",
@@ -112,21 +98,35 @@ export default{
                 "fkPuesto":"",
                 "fkDepartamento":""
             },
+            Puestos:[],
+            Departamentos:[]
         }
     },
-    
-
+    created: function () {
+        this.consultarPuesto();
+        // this.consultarDepa();
+      },
     methods: {
-      EditarEmpleado() {
+      editarEmpleado() {
         axios.put("https://localhost:7294/Empleado?id=" + this.pkEmpleado, this.form).then
                 (result => {
                     if (result.status == 200) {
                         console.log(result.data.result);
-                    }
+                      }
                     this.$router.push("/listarempleado")
 
                 });
-      }
+      },
+      consultarPuesto(){
+      axios.get("https://localhost:7294/Puesto").then((result) => {
+          console.log(result.data.result);
+          this.Puestos = result.data.result;
+        });
+        axios.get("https://localhost:7294/Departamento").then((result) => {
+          console.log(result.data.result);
+          this.Departamentos = result.data.result;
+        });
+      },
     },
     mounted:function(pkEmpleado){
         this.pkEmpleado = this.$route.params.pkEmpleado;
@@ -138,8 +138,9 @@ export default{
             this.form.apellidos = datos.data.value.result.apellidos;
             this.form.direccion = datos.data.value.result.direccion;
             this.form.ciudad = datos.data.value.result.ciudad;
-            this.form.fkPuesto = datos.data.value.result.FkPuesto;
-            this.form.fkDepartamento = datos.data.value.result.FkDepartamento;
+            this.form.fkPuesto = datos.data.value.result.fkPuesto;
+            //this.form.fkdepartamento=datos.data.value.result.fkDepartamento;
+            this.form.fkDepartamento = datos.data.value.result.fkDepartamento;
             console.log(this.form);
         });
       },

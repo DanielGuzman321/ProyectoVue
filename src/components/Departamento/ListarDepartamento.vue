@@ -55,7 +55,6 @@
   
         <div class="butt-fun">|
         <router-link :to="{ name: 'creardepartamento' }" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Crear departamento</router-link>|
-        <router-link :to="{ name: 'Dashboard' }" class="btn btn-secondary"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</router-link>|
         </div>
   
         <div class="card_body">

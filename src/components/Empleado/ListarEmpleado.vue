@@ -66,8 +66,8 @@
               <th style="font-weight: bold;">Apellidos</th>
               <th style="font-weight: bold;">Dirección</th>
               <th style="font-weight: bold;">Ciudad</th>
-              <th style="font-weight: bold;">FkPuesto</th>
-              <th style="font-weight: bold;">FkDepartamento</th>
+              <th style="font-weight: bold;">Puesto</th>
+              <th style="font-weight: bold;">Departamento</th>
               <th style="font-weight: bold;">Acciones</th>
             </tr>
           </thead>
@@ -78,8 +78,8 @@
               <td>{{ empleado.apellidos }}</td>
               <td>{{ empleado.direccion }}</td>
               <td>{{ empleado.ciudad }}</td>
-              <td>{{ empleado.fkPuesto }}</td>
-              <td>{{ empleado.fkDepartamento }}</td>
+              <td>{{ empleado.puesto.nombre }}</td>
+              <td>{{ empleado.departamento.nombre}}</td>
               <td>
                   <div class="btn-group" role="label" aria-label="">
                   <button type="button" v-on:click="editarEmpleado(empleado.pkEmpleado)" class="btn btn-warning">
@@ -176,7 +176,7 @@ export default {
 
       axios.delete("https://localhost:7294/Empleado?id=" + pkEmpleado);
 
-      window.location.href = "listarusuarios";
+      window.location.href = "/listarempleado";
     },
     editarEmpleado(pkEmpleado){
       console.log(pkEmpleado);

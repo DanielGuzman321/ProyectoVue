@@ -66,7 +66,7 @@
                 <th style="font-weight: bold;">RazonSocial</th>
                 <th style="font-weight: bold;">Fecha</th>
                 <th style="font-weight: bold;">RFC</th>
-                <th style="font-weight: bold;">FkCliente</th>
+                <th style="font-weight: bold;">Cliente</th>
                 <th style="font-weight: bold;">Acciones</th>
               </tr>
             </thead>
@@ -76,7 +76,7 @@
                 <td>{{ factura.razonSocial }}</td>
                 <td>{{ factura.fecha }}</td>
                 <td>{{ factura.rfc }}</td>
-                <td>{{ Puestos.find(e=>e.pkPuesto == factura.fkCliente)?.nombre }}</td>
+                <td>{{ factura.cliente.nombre}}</td>
                 <td>
                     <div class="btn-group" role="label" aria-label="">
                     <button type="button" v-on:click="editarFac(factura.pkFactora)" class="btn btn-warning">

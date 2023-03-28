@@ -73,7 +73,7 @@
             <div class="form-group">
               <label for=""  style="font-weight: bold; color: black;">Fecha:</label>
               <input
-                type="text"
+                type="datetime-local"
                 class="form-control"
                 name="fecha"
                 id="fecha"
@@ -100,21 +100,14 @@
                 >Ingresa la RFC de la empresa</small
               >
             </div>
+
             <div class="form-group">
               <label for=""  style="font-weight: bold; color: black;">FkCliente:</label>
-              <input
-                type="text"
-                class="form-control"
-                name="fkCliente"
-                id="fkCliente"
-                v-model="facturas.fkCliente"
-                aria-describedby="helpId"
-                placeholder="FkCliente"
-              />
-              <small id="helpId" class="form-text" text-muted
-                >Ingresa la FkCliente</small
-              >
+              <select class="form-control" name="cliente" id="cliente" v-model="facturas.fkCliente">
+              <option v-for="cliente in Clientes" :value="cliente.pkCliente" :key="cliente.pkCliente">{{cliente.nombre}}</option>
+            </select>
             </div>
+            
             <br />
             <div class="btn-group" role="group">
               |<button type ="submit" class="btn btn-success">Agregar</button>
@@ -166,15 +159,18 @@ td:nth-child(even) {
 
  </style>
 
-  <script>
+  <script >
   import axios from "axios";
   export default {
     data() {
       return {
         facturas: {},
+        Clientes:[],
       };
     },
-  
+    created: function () {
+        this.consultarCliente();
+      },
     methods: {
       agregarRegistro() {
         console.log(this.facturas);
@@ -183,7 +179,7 @@ td:nth-child(even) {
           razonSocial: this.facturas.razonSocial,
           fecha: this.facturas.fecha,
           rfc: this.facturas.rfc,
-          fkCliente: this.facturas.fkCliente,
+          fkcliente: this.facturas.fkCliente,
         };
   
         axios.post("https://localhost:7294/Factura", cuerpo).then((result) => {
@@ -197,7 +193,13 @@ td:nth-child(even) {
         }
         })   
         window.location.href = "/listarfactura";
-      }
+      },
+      consultarCliente() {
+            axios.get("https://localhost:7294/Cliente").then((result) => {
+            console.log(result.data.result);
+            this.Clientes = result.data.result;});
+       },
+    
     }
   }
   </script>

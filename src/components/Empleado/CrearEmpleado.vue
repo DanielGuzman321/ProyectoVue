@@ -1,7 +1,7 @@
 <template>
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
-  <img src="../assets/logo.svg" style="width:75%">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFSvfxb61950EiMknOooovBbcxJYBvJIFGQ9WUZBcoOd3C-dhH2D9q3yRbSgLkA4ZF0tw&usqp=CAU" style="width:75%">
   <a href="/Dashboard" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>Home</p>
@@ -96,17 +96,19 @@
                       <div class="col">
 
                           <div class="form-group">
-                              <label for="fkpuesto">FkPuesto:</label>
-                              <input type="text" class="form-control" name="fkpuesto" id="fkpuesto" aria-describedby="helpId"
-                                  placeholder="Ingrese el fkpuesto" v-model="Empleados.fkpuesto" />
+                              <label for="fkpuesto">Puesto:</label>
+                              <select class="form-control" name="fkpuesto" id="fkpuesto" v-model="Empleados.fkpuesto">
+                                <option v-for="puesto in Puestos" :value="puesto.pkPuesto" :key="puesto.pkPuesto">{{puesto.nombre}}</option>
+                              </select>
                           </div>
                       </div>
                       <div class="col">
 
                           <div class="form-group">
-                            <label for="fkdepartamento">FkDepartamento:</label>
-                            <input type="text" class="form-control" name="fkdepartamento" id="fkdepartamento" aria-describedby="helpId"
-                                placeholder="Ingrese el fkdepartamento" v-model="Empleados.fkdepartamento" />
+                            <label for="fkdepartamento">Departamento:</label>
+                            <select class="form-control" name="departamento" id="departamento" v-model="Empleados.fkdepartamento">
+                              <option v-for="departamento in Departamentos" :value="departamento.pkDepartamento" :key="departamento.pkDepartamento">{{departamento.nombre}}</option>
+                            </select>
                           </div>
                       </div>
                   </div>
@@ -143,8 +145,13 @@ export default {
       return {
           Empleados: {},
           smg: "",
+          Puestos:[],
+          Departamentos:[]
       };
   },
+  created: function () {
+        this.consultar();
+      },
   methods: {
       formulario() {
           
@@ -171,7 +178,17 @@ export default {
           })
 
           console.log(cuerpo)
-      }
+      },
+      consultar() {
+        axios.get("https://localhost:7294/Puesto").then((result) => {
+          console.log(result.data.result);
+          this.Puestos = result.data.result;
+        });
+        axios.get("https://localhost:7294/Departamento").then((result) => {
+          console.log(result.data.result);
+          this.Departamentos = result.data.result;
+        });
+       },
   }
 }
 </script>

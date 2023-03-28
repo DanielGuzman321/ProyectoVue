@@ -32,29 +32,15 @@
             </div><br>
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkEmpleado:</label>
-              <input
-                type="number"
-                class="form-control"
-                name="fkempleado"
-                id="fkempleado"
-                v-model="form.fkempleado"
-                aria-describedby="helpId"
-                placeholder="FkEmpleado"
-              />
-              <small id="helpId" class="form-text" text-muted>Ingresa el FkEmpleado</small>
+              <select class="form-control" name="fkempleado" id="fkempleado" v-model="form.fkempleado">
+              <option v-for="empleado in Empleados" :value="empleado.pkEmpleado" :key="empleado.pkEmpleado">{{empleado.nombre}}</option>
+            </select>
             </div><br/>
             <div class="form-group">
               <label for="" style="font-weight: bold; color: black;">FkRol</label>
-              <input
-                type="number"
-                class="form-control"
-                name="fkrol"
-                id="fkrol"
-                v-model="form.fkrol"
-                aria-describedby="helpId"
-                placeholder="FkRol"
-              />
-              <small id="helpId" class="form-text" text-muted>Ingresa el FkRol</small>
+              <select class="form-control" name="fkrol" id="fkrol" v-model="form.fkrol">
+              <option v-for="rol in Roles" :value="rol.pkRol" :key="rol.pkRol">{{rol.nombre}}</option>
+            </select>
             </div><br/>
   
             <div class="btn-group" role="group">
@@ -84,9 +70,13 @@ export default{
                 "fkempleado":"",
                 "fkrol":"",
             },
+            Empleados:[],
+            Roles:[]
         }
     },
-    
+    created: function () {
+        this.consultar();
+      },
 
     methods: {
       EditarUsuario() {
@@ -98,6 +88,16 @@ export default{
                     this.$router.push("/listarusuario")
 
                 });
+      },
+      consultar(){
+        axios.get("https://localhost:7294/Empleado").then((result) => {
+        console.log(result.data.result);
+        this.Empleados = result.data.result;
+      });
+      axios.get("https://localhost:7294/Rol").then((result) => {
+        console.log(result.data.result);
+        this.Roles = result.data.result;
+      });
       }
     },
     mounted:function(pkUsuario){
